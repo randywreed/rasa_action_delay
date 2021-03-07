@@ -36,7 +36,7 @@ class actionWait(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
             import time
-            time.sleep(5)
+            time.sleep(10)
             dispatcher.utter_message(text="action complete")
 
             return []
@@ -50,6 +50,6 @@ class actionUtter(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-            dispatcher.utter_messaage(text="this is a separate action that will also ask you to wait")
+            dispatcher.utter_message(text="this is a separate action that will also ask you to wait")
 
             return []
