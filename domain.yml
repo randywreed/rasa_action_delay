@@ -5,6 +5,10 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- no_action:
+    use_entities: true
+- test_action:
+    use_entities: true
 - greet:
     use_entities: true
 - goodbye:
@@ -19,13 +23,11 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
-- test_action:
-    use_entities: true
 entities: []
 slots: {}
 responses:
   utter_greet:
-  - text: Hey! To see the problem ask 'show me the problem'
+  - text: Hey! This will show the problem of a long action. The action sleeps for 10 seconds before reporting done. There are two versions one which initaites an utterance and then an intervening action before the wait action, and second that just does the utterance and then the wait action. To see the problem with intervening action ask 'show me the problem' otherwise ask for 'no action'
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -40,7 +42,9 @@ responses:
   utter_wait:
   - text: please wait while I perform the action- this utterance should have appeared immediately after asking to show the problem
 actions:
-- action_wait
 - action_utter
+- action_wait
+- utter_greet
+- utter_wait
 forms: {}
 e2e_actions: []

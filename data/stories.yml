@@ -38,3 +38,21 @@ stories:
   - action: action_utter
   - action: action_wait
   
+- story: no action wait problem
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: no_action
+  - action: utter_wait
+  - action: action_wait
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: no_action
+  - action: utter_wait
+  - action: action_wait
+  - intent: test_action
+  - action: utter_wait
+  - action: action_utter
+  - action: action_wait
